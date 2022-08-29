@@ -5,11 +5,13 @@ class MyGeometry:
     non_euqluid = 1.0
 
     # Это называется "метод класса"
-    def hypot(a, b):
+    @classmethod
+    def hypot(cls, a, b):
         result = ((a * a + b * b) ** 0.5) * MyGeometry.non_euqluid
         return result
 
-    def square(a, b):
+    @classmethod
+    def square(cls, a, b):
         return a * b / 2 * MyGeometry.non_euqluid
 
 
