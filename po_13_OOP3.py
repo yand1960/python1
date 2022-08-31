@@ -1,14 +1,16 @@
 # Пример класса данных
 class Person:
 
+    __slots__ = ("first_name", "last_name", "salary")
+
     def __init__(self, first_name: str, last_name: str, salary: float):
         self.first_name = first_name
         self.last_name = last_name
         self.salary = salary
 
     def __str__(self):
-        # return f"Person: {self.first_name} {p.last_name}"
-        return self.__dict__.__str__()
+        return f"Person: {self.first_name} {self.last_name}"
+        #return self.__dict__.__str__()
 
 
 if __name__ ==  "__main__":
