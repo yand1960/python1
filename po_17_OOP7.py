@@ -13,7 +13,7 @@ cat = Cat()
 dog = Dog()
 # print(dog.voice)
 
-def call(animal: Cat):
+def call(animal):
     print("Come to me!")
     print(animal.voice)
 

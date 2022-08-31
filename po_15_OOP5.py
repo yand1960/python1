@@ -15,9 +15,12 @@ class Boss(Person):
 
 class Manager(Person):
 
-    # По сути, __slots__ заменяет __dict__, запрещая динамическое расширение класса
-    # Это означает, что __dict__ должен быть отменен и у предка.
-    # И __dict__ нельзя  добавлять к слотам
+    # По сути, __slots__ заменяет __dict__,
+    # запрещая динамическое расширение класса.
+    # Слоты наследника добавляются к слотам предка.
+    # Это означает, что если  надо запретить дин_амическое расширение класса,
+    # то dict__ должен быть отменен и у предка
+    # и __dict__ при этом нельзя  добавлять к слотам
     __slots__ = "level"
 
     def __init__(self, first_name, last_name, salary, level):
@@ -43,13 +46,19 @@ print(manager2 is manager1, manager2 == manager1)
 
 class ControlledList(list):
 
+    def append(self, value):
+        if value % 2 == 1:
+            super().append( value)
+        else:
+            raise ValueError("только нечетные числа допустимы")
+
     def __setitem__(self, key, value):
         if value % 2 == 1:
             super().__setitem__(key, value)
         else:
             raise ValueError("только нечетные числа допустимы")
 
-list1 = ControlledList()
+list1 = ControlledList([])
 list1.append(1)
 list1.append(7)
 print(list1)
@@ -57,13 +66,13 @@ list1[1] = 81
 print(list1)
 
 manager3 = Manager("A","B", 123, 80)
-manager3.mumu = "MUMU!"
+#manager3.mumu = "MUMU!"
 print(manager3.first_name)
-print(manager3.mumu)
+#print(manager3.mumu)
 
 x = 8
 # x.mumu = "mumu"
 
 person1 = Person("A","B", 111)
-person1.mumu = "MUMU!"
+#person1.mumu = "MUMU!"
 
