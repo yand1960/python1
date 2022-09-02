@@ -1,9 +1,9 @@
-# Скопировать в папку folder3 все файлы, которые есть в папке folder1,
+# Скопировать в папку folder3 все файлы,
+# которые есть в папке folder1,
 # но которых нет в папке folder2
 
 import os
 commands = ["dir", "notepad"]
-# commands = ["calc\nnotepad"]
 
 os.system("CHCP 65001")
 
