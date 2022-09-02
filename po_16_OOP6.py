@@ -16,14 +16,14 @@ class A:
         else:
             raise ValueError("Допустимы только числа больше 100")
 
-a = A(123)
-#a.value = 777
+# a = A(123)
+# a.value = 777
 # a._value = 999
 # print(a._value)
-print(a.get_value())
-# a.set_value(99)
+# print(a.get_value())
+# a.set_value(99) # error!
 
-# Явное опредление свойства класса
+# Явное определение свойства у класса с использованием функции property
 class B:
 
     def __init__(self, value: int):
@@ -45,8 +45,9 @@ class B:
 # print(b.value)
 # b.value = 777
 # print(b.value)
-# b.value = 77
+# b.value = 77 # error!
 
+# Явное определение свойства у класса с использованием декоратора property
 class C:
 
     def __init__(self, value: int):
@@ -64,8 +65,9 @@ class C:
         else:
             raise ValueError("Допустимы только числа больше 100")
 
+
 c = C(123)
 print(c.value)
 c.value = 666
 print(c.value)
-c.value = 77
+c.value = 77 # error!
