@@ -2,6 +2,7 @@
 
 from typing import Iterable, Callable
 
+
 class ControlledList(list):
 
     def __init__(self, data: Iterable = [], criteria: Callable[[int], bool] = lambda x: True):
@@ -46,3 +47,4 @@ list1.append(1)
 # print(list1, type(list1))
 print(list1)
 list1.criteria = lambda x: x > -10
+
