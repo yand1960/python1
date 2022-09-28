@@ -29,7 +29,7 @@ class Calc(QWidget):
 
         self.show()
 
-        self.calculations = Calculations("calcs.csv")
+        self.calculations = Calculations("yand.dyndns.org;MyDb;northwind;northwind")
 
     def btnPlus_click(self):
         x = int(self.txtX.text())
