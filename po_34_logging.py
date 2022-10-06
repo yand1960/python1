@@ -1,5 +1,6 @@
 import logging
 
+# Конфиуграция логгера
 logger = logging.getLogger("mylogger")
 logger.addHandler(logging.StreamHandler())
 handler = logging.FileHandler("data/log.txt")
@@ -7,6 +8,7 @@ handler.setFormatter(logging.Formatter(fmt="%(asctime)s %(levelname)s\t %(messag
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
+# Демнострация использования
 if __name__ == "__main__":
     logger.debug("It is debug")
     logger.info("It is info")
